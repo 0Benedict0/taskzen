@@ -1,0 +1,374 @@
+.register-page {
+  position: relative;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(0, 174, 255, 0.16),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(93, 52, 255, 0.18),
+      transparent 35%
+    ),
+    #050b24;
+
+  color: white;
+}
+
+.register-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.register-glow {
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  opacity: 0.35;
+}
+
+.register-glow-one {
+  top: -180px;
+  left: -150px;
+
+  background: #00bfff;
+}
+
+.register-glow-two {
+  right: -180px;
+  bottom: -180px;
+
+  background: #6c35ff;
+}
+
+.register-stars {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.register-star {
+  position: absolute;
+
+  width: 2px;
+  height: 2px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+
+  animation: star-twinkle ease-in-out infinite;
+}
+
+@keyframes star-twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.4);
+  }
+}
+
+.register-card {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 460px;
+
+  padding: 38px;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 28px;
+
+  background: rgba(10, 20, 60, 0.72);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  animation: register-card-enter 0.6s ease;
+}
+
+@keyframes register-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.register-logo {
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 18px;
+
+  border-radius: 18px;
+
+  font-size: 22px;
+  font-weight: 800;
+
+  background: linear-gradient(135deg, #00d9ff, #5d35ff);
+
+  box-shadow:
+    0 10px 30px rgba(0, 190, 255, 0.25),
+    0 0 40px rgba(90, 50, 255, 0.2);
+}
+
+.register-header h1 {
+  margin: 0 0 10px;
+
+  font-size: 32px;
+  font-weight: 800;
+
+  letter-spacing: -0.8px;
+}
+
+.register-header p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.register-header strong {
+  color: #00d9ff;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.register-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.register-field label {
+  font-size: 13px;
+  font-weight: 600;
+
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.register-field input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 14px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 13px;
+
+  outline: none;
+
+  background: rgba(0, 0, 0, 0.2);
+
+  color: white;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.register-field input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.register-field input:focus {
+  border-color: rgba(0, 200, 255, 0.7);
+
+  background: rgba(0, 100, 180, 0.08);
+
+  box-shadow:
+    0 0 0 3px rgba(0, 200, 255, 0.08),
+    0 0 25px rgba(0, 200, 255, 0.08);
+}
+
+.register-field input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.register-error {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 12px 14px;
+
+  border: 1px solid rgba(255, 80, 100, 0.25);
+  border-radius: 12px;
+
+  background: rgba(255, 50, 80, 0.08);
+
+  color: #ff9da8;
+
+  font-size: 13px;
+}
+
+.register-error span {
+  font-size: 16px;
+}
+
+.register-submit {
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 4px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: linear-gradient(135deg, #00cfff, #4936ff);
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 30px rgba(0, 150, 255, 0.2),
+    0 5px 20px rgba(70, 50, 255, 0.2);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.register-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 16px 35px rgba(0, 150, 255, 0.3),
+    0 8px 25px rgba(70, 50, 255, 0.3);
+}
+
+.register-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.register-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.register-spinner {
+  width: 17px;
+  height: 17px;
+
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: white;
+
+  border-radius: 50%;
+
+  animation: register-spin 0.7s linear infinite;
+}
+
+@keyframes register-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.register-footer {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+
+  margin-top: 25px;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 13px;
+}
+
+.register-footer a {
+  color: #00d9ff;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.register-footer a:hover {
+  color: #70eaff;
+}
+
+@media (max-width: 520px) {
+  .register-page {
+    padding: 20px 14px;
+  }
+
+  .register-card {
+    padding: 28px 20px;
+
+    border-radius: 22px;
+  }
+
+  .register-header h1 {
+    font-size: 27px;
+  }
+}

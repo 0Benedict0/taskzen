@@ -1,0 +1,27 @@
+services:
+  mongodb:
+    image: mongo:8
+    container_name: taskzen-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: taskzen-backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env
+    environment:
+      MONGO_URI: mongodb://mongodb:27017/taskzen
+    depends_on:
+      - mongodb
+
+volumes:
+  mongodb_data:

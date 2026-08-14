@@ -1,0 +1,6 @@
+@import "./profile/profile-layout.css";
+@import "./profile/profile-card.css";
+@import "./profile/profile-buttons.css";
+@import "./profile/profile-stars.css";
+
+@import "./profile/profile-responsive.css";

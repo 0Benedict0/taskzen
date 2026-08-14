@@ -1,0 +1,292 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(2, 6, 23, 0.75);
+  backdrop-filter: blur(8px);
+}
+
+.modal {
+  width: min(100%, 560px);
+  max-height: calc(100vh - 40px);
+
+  padding: 30px;
+
+  overflow-y: auto;
+
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 20px;
+
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+}
+
+.modal-label {
+  margin-bottom: 8px;
+
+  color: #38bdf8;
+  font-size: 13px;
+}
+
+.modal-header h2 {
+  font-size: 26px;
+}
+
+.modal-close {
+  width: 36px;
+  height: 36px;
+
+  border: 1px solid #334155;
+  border-radius: 10px;
+
+  background: transparent;
+  color: #94a3b8;
+
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.task-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+.task-form input,
+.task-form textarea,
+.task-form select {
+  width: 100%;
+  padding: 13px 14px;
+
+  border: 1px solid #334155;
+  border-radius: 10px;
+
+  outline: none;
+
+  background: #0f172a;
+  color: #f8fafc;
+
+  font: inherit;
+}
+
+.task-form input:focus,
+.task-form textarea:focus,
+.task-form select:focus {
+  border-color: #38bdf8;
+}
+
+.task-form textarea {
+  resize: vertical;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+
+  margin-top: 10px;
+}
+
+.cancel-button,
+.submit-button {
+  padding: 12px 18px;
+
+  border-radius: 10px;
+
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cancel-button {
+  border: 1px solid #334155;
+
+  background: transparent;
+  color: #cbd5e1;
+}
+
+.submit-button {
+  border: none;
+
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(2, 6, 23, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+.confirm-modal {
+  width: min(100%, 420px);
+  padding: 30px;
+
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+}
+
+.confirm-icon {
+  width: 48px;
+  height: 48px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #f87171;
+  border-radius: 50%;
+
+  color: #f87171;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.confirm-modal h2 {
+  margin-bottom: 12px;
+  color: #f8fafc;
+}
+
+.confirm-modal p {
+  margin-bottom: 25px;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.confirm-modal strong {
+  color: #f8fafc;
+}
+
+.confirm-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.delete-confirm-button {
+  padding: 12px 18px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #ef4444;
+  color: #fff;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.delete-confirm-button:hover {
+  background: #dc2626;
+}
+
+@media (max-width: 600px) {
+  .modal-overlay {
+    align-items: flex-start;
+    padding: 15px;
+    overflow-y: auto;
+  }
+
+  .modal {
+    width: 100%;
+    max-height: calc(100vh - 30px);
+
+    padding: 20px;
+
+    border-radius: 16px;
+  }
+
+  .modal-header {
+    margin-bottom: 20px;
+  }
+
+  .modal-header h2 {
+    font-size: 22px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancel-button,
+  .submit-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .confirm-overlay {
+    align-items: flex-start;
+    padding: 15px;
+    overflow-y: auto;
+  }
+
+  .confirm-modal {
+    width: 100%;
+    max-height: calc(100vh - 30px);
+
+    padding: 22px 20px;
+
+    border-radius: 16px;
+  }
+
+  .confirm-actions {
+    flex-direction: column-reverse;
+  }
+
+  .confirm-actions button {
+    width: 100%;
+  }
+}

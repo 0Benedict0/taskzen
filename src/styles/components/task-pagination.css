@@ -1,0 +1,36 @@
+.task-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  margin-top: 24px;
+}
+
+.task-pagination span {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.task-pagination button {
+  padding: 9px 14px;
+
+  border: 1px solid #334155;
+  border-radius: 9px;
+
+  background: #111827;
+  color: #cbd5e1;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.task-pagination button:hover:not(:disabled) {
+  border-color: #38bdf8;
+  color: #38bdf8;
+}
+
+.task-pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

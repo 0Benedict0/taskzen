@@ -1,0 +1,38 @@
+.add-task-button {
+  padding: 12px 18px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #38bdf8;
+  color: #0f172a;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.add-task-button:hover {
+  background: #7dd3fc;
+  transform: translateY(-2px);
+}
+
+.task-action {
+  width: 32px;
+  height: 32px;
+
+  border: 1px solid #334155;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #38bdf8;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.task-action:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}

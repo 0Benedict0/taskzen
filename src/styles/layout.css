@@ -1,0 +1,9 @@
+.dashboard-layout {
+  min-height: 100vh;
+  display: flex;
+}
+
+.dashboard-main {
+  flex: 1;
+  padding: 35px 45px;
+}

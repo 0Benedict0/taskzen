@@ -17,6 +17,16 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false
   },
-  "include": ["src/**/*.ts"],
+  "include": [
+    "src/**/*.ts",
+    "src/routes/authRoutes.js",
+    "src/middleware/authMiddleware.js",
+    "src/middleware/taskValidator.js",
+    "src/middleware/notFound.js",
+    "src/middleware/errorHandler.js",
+    "src/services/authService.js",
+    "src/controllers/authController.js",
+    "src/middleware/taskValidator.js"
+  ],
   "exclude": ["node_modules", "dist"]
 }

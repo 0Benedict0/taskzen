@@ -12,13 +12,18 @@ import notFound from "./middleware/notFound.js";
 
 dotenv.config();
 
-connectDB();
-
 const app = express();
 
-const PORT = process.env.PORT || 5000;
+const PORT = Number(process.env.PORT) || 5000;
+const HOST = "0.0.0.0";
 
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL || true,
+    credentials: true,
+  }),
+);
+
 app.use(express.json());
 
 app.use("/api/tasks", taskRoutes);
@@ -34,6 +39,17 @@ app.get("/api/health", (req, res) => {
 app.use(notFound);
 app.use(errorHandler);
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+const startServer = async (): Promise<void> => {
+  try {
+    await connectDB();
+
+    app.listen(PORT, HOST, () => {
+      console.log(`TaskZen API running on ${HOST}:${PORT}`);
+    });
+  } catch (error) {
+    console.error("Failed to start server:", error);
+    process.exit(1);
+  }
+};
+
+startServer();
